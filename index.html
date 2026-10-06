@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100e">
+  <meta name="description" content="Carta digital de DK Bites. Hamburguesas artesanales, salchipapas y pedidos por WhatsApp en Usme y alrededores, Bogotá.">
+  <title>DK Bites | Carta digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="DK Bites, inicio"><img src="assets/logo-dk-bites.png" alt="Logo DK Bites"><span>DK <b>BITES</b></span></a>
+    <button class="menu-toggle clay" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="navLinks"><a href="#carta">La carta</a><a href="#domicilios">Domicilios</a><a href="#contacto">Contacto</a><a class="nav-order" href="https://wa.me/573227196880" target="_blank" rel="noopener">Pedir por WhatsApp ↗</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow"><i></i> SABOR HECHO AL MOMENTO <i></i></span>
+        <h1>Se te antoja.<br><em>Lo preparamos.</em></h1>
+        <p>Hamburguesas artesanales y salchipapas para disfrutar en Usme y sus alrededores.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#carta">VER LA CARTA <span>↓</span></a><a class="btn btn-outline" href="https://wa.me/573227196880?text=Hola%20DK%20Bites%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">PEDIR POR WHATSAPP ↗</a></div>
+        <div class="hero-meta"><span>📍 Usme, Bogotá</span><span>🕑 Jue–dom · 2:00 p. m.–11:00 p. m.</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="food-frame clay"><img src="assets/hamburguesa-doble.png" alt="Hamburguesa artesanal doble de DK Bites"></div>
+        <div class="floating-note note-top clay"><span>🔥</span><div><b>Hecho al momento</b><small>Con sabor y calidad</small></div></div>
+        <div class="floating-note note-bottom clay"><span>🍟</span><div><b>¿Con papitas?</b><small>Arma tu combo por $5.000 más</small></div></div>
+        <div class="hero-stamp">DK<br><b>BITES</b></div>
+      </div>
+    </section>
+
+    <section class="catalog section" id="carta">
+      <div class="section-heading"><div><span class="eyebrow">ESCOGE TU ANTOJO</span><h2>La carta<span class="accent">.</span></h2><p>Tu próximo favorito está aquí.</p></div><div class="search-wrap clay"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar en la carta…" aria-label="Buscar productos"></div></div>
+      <div class="catalog-layout">
+        <div class="catalog-main">
+          <div class="category-tabs" id="categoryTabs"><button class="tab active" data-category="Todos">Todo</button><button class="tab" data-category="Hamburguesas">Hamburguesas</button><button class="tab" data-category="Salchipapas">Salchipapas</button><button class="tab" data-category="Combos">Combos</button></div>
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+          <div class="empty-state clay" id="emptyState" hidden>No encontramos productos con esa búsqueda.</div>
+          <div class="menu-note clay"><span>✦</span><p><b>Hazlo combo</b><br>Por solo <strong>$5.000 adicionales</strong>, agrega una porción de papas de 150 g y una gaseosa personal de 250 ml a tu elección.</p></div>
+        </div>
+        <aside class="side-card clay" id="domicilios"><div class="side-icon">🛵</div><span class="eyebrow">TE LO LLEVAMOS</span><h3>El antojo llega a tu puerta.</h3><p>Domicilios a toda la localidad de Usme y alrededores. El valor varía según la zona.</p><div class="side-divider"></div><div class="side-row"><span>📍</span><div><b>Domicilio</b><small>Indica tu barrio para confirmar el costo.</small></div></div><div class="side-row"><span>🏠</span><div><b>Recoger</b><small>También puedes recoger tu pedido.</small></div></div><a class="btn btn-primary side-button" href="#checkout">ARMAR MI PEDIDO ↓</a><img class="side-food" src="assets/salchipapa-especial.png" alt="Salchipapa especial de DK Bites"></aside>
+      </div>
+    </section>
+
+    <section class="info-strip section" id="contacto"><div class="info-card clay"><span class="info-icon">🕒</span><div><h3>¿Cuándo estamos?</h3><p>Jueves a domingo<br><b>2:00 p. m. – 11:00 p. m.</b></p></div></div><div class="info-card clay"><span class="info-icon">💳</span><div><h3>Formas de pago</h3><p>Efectivo · Nequi · Daviplata · Bre-B</p></div></div><div class="info-card clay"><span class="info-icon">📲</span><div><h3>Síguenos</h3><p>Encuéntranos en TikTok</p><a href="https://www.tiktok.com/@dkbites_18" target="_blank" rel="noopener">@dkbites_18 ↗</a></div></div></section>
+
+    <section class="checkout-section section" id="checkout"><div class="checkout-heading"><span class="eyebrow">UNOS PASOS Y LISTO</span><h2>Tu pedido<span class="accent">.</span></h2><p>Revisa tu carrito y cuéntanos dónde lo llevamos.</p></div><div class="checkout-layout"><div class="cart-panel clay"><div class="panel-title"><h3>Tu carrito</h3><span id="cartCount" class="count-pill">0 productos</span></div><div id="cartItems" class="cart-items"><div class="cart-empty">Tu carrito está esperando algo rico. 🍔<br><a href="#carta">Explorar la carta</a></div></div><div class="cart-total"><span>Total de productos</span><b id="cartSubtotal">$0</b></div><p class="delivery-hint">El costo del domicilio se confirma por WhatsApp según tu zona.</p></div>
+      <form class="order-form clay" id="orderForm"><h3>Datos para el pedido</h3><label>Tu nombre<input name="name" required placeholder="¿Cómo te llamas?"></label><label>Tipo de pedido<select name="fulfillment" id="fulfillment"><option value="Domicilio">Domicilio</option><option value="Recoger">Recoger</option></select></label><div id="addressFields"><label>Dirección<input name="address" id="address" placeholder="Calle, carrera, número…"></label><label>Barrio / zona<input name="neighborhood" id="neighborhood" placeholder="Tu barrio en Usme o alrededores"></label><label>Indicaciones (opcional)<input name="notes" placeholder="Casa, torre, punto de referencia…"></label></div><label>Forma de pago<select name="payment" required><option value="Efectivo">Efectivo</option><option value="Nequi">Nequi</option><option value="Daviplata">Daviplata</option><option value="Bre-B">Bre-B</option></select></label><label>Gaseosa para los combos (si aplica)<select name="soda"><option value="A elección / confirmar por WhatsApp">A elección / confirmar por WhatsApp</option><option>Coca-Cola</option><option>Manzana</option><option>Colombiana</option><option>Pepsi</option><option>Sprite</option><option>Otra (confirmar por WhatsApp)</option></select></label><label>Nota del pedido (opcional)<textarea name="orderNote" rows="2" placeholder="Alguna indicación adicional…"></textarea></label><button class="btn btn-primary submit-order" type="submit">CONTINUAR POR WHATSAPP <span>↗</span></button><p class="privacy-note">Al continuar, se abrirá WhatsApp con el resumen para que puedas revisarlo y enviarlo.</p><p class="form-error" id="formError" role="alert"></p></form></div></section>
+  </main>
+  <footer class="footer"><a class="footer-brand" href="#inicio">DK BITES</a><p>Sabor que encanta. Momentos que unen.</p><span>Usme · Bogotá, Colombia</span><a href="https://www.tiktok.com/@dkbites_18" target="_blank" rel="noopener">TikTok @dkbites_18 ↗</a><small>© <span id="year"></span> DK Bites</small></footer>
+  <a class="floating-whatsapp clay" href="https://wa.me/573227196880?text=Hola%20DK%20Bites%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Abrir WhatsApp">☏</a><a class="floating-cart clay" href="#checkout" aria-label="Ir al carrito">🛍<span id="floatingCount">0</span></a>
+  <script src="app.js"></script>
+</body>
+</html>
