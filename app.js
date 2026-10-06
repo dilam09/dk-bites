@@ -53,11 +53,11 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
  const form=e.currentTarget;const d=new FormData(form);const isDelivery=d.get('fulfillment')==='Domicilio';
  if(isDelivery&&(!String(d.get('address')).trim()||!String(d.get('neighborhood')).trim())){err.textContent='Para el domicilio, completa la dirección y el barrio.';return}
  const total=cart.reduce((s,x)=>s+x.qty*x.price,0);
- let message=`Hola DK Bites! \u{1F44B} Quiero hacer este pedido:\n\n${cart.map(x=>`• ${x.qty} x ${x.name} — ${money(x.price*x.qty)}`).join('\n')}\n\n*Total productos: ${money(total)}*\n\n\u{1F464} Nombre: ${d.get('name')}\n\u{1F6F5} Tipo: ${d.get('fulfillment')}`;
- if(isDelivery)message+=`\n\u{1F4CD} Dirección: ${d.get('address')}\n\u{1F3E0} Barrio/zona: ${d.get('neighborhood')}`;
- if(isDelivery&&String(d.get('notes')).trim())message+=`\n\u{1F9ED} Indicaciones: ${d.get('notes')}`;
- message+=`\n\u{1F4B3} Pago: ${d.get('payment')}\n\u{1F964} Gaseosa: ${d.get('soda')}`;
- if(String(d.get('orderNote')).trim())message+=`\n\u{1F4DD} Nota: ${d.get('orderNote')}`;
+ let message=`Hola DK Bites! Quiero hacer este pedido:\n\n${cart.map(x=>`- ${x.qty} x ${x.name} — ${money(x.price*x.qty)}`).join('\n')}\n\nTotal productos: ${money(total)}\n\nNombre: ${d.get('name')}\nTipo: ${d.get('fulfillment')}`;
+ if(isDelivery)message+=`\nDirección: ${d.get('address')}\nBarrio/zona: ${d.get('neighborhood')}`;
+ if(isDelivery&&String(d.get('notes')).trim())message+=`\nIndicaciones: ${d.get('notes')}`;
+ message+=`\nPago: ${d.get('payment')}\nGaseosa: ${d.get('soda')}`;
+ if(String(d.get('orderNote')).trim())message+=`\nNota: ${d.get('orderNote')}`;
  if(isDelivery)message+='\n\nEntiendo que el costo del domicilio se confirma según la zona.';
  message+='\n\n¿Me confirman disponibilidad y tiempo aproximado, por favor?';
  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`,'_blank','noopener');
