@@ -25,7 +25,7 @@ const cartItems = document.getElementById('cartItems');
 function renderProducts(){
  const term = document.getElementById('searchInput').value.trim().toLowerCase();
  const visible = products.filter(p => (activeCategory==='Todos'||p.category===activeCategory) && `${p.name} ${p.desc} ${p.category}`.toLowerCase().includes(term));
- grid.innerHTML = visible.map(p=>`<article class="product-card clay ${p.category==='Combos'?'combo-card':''}"><div class="product-top"><div><span class="product-tag">${p.tag}</span><h3>${p.name}</h3></div><span class="product-price">${money(p.price)}</span></div><p class="product-desc">${p.desc}</p><div class="product-actions"><button class="add-button" data-add="${p.id}">＋ Agregar</button>${p.category==='Hamburguesas'?\`<button class="combo-button" data-combo="${p.id}">+ Combo $5.000</button>\`:''}</div></article>`).join('');
+ grid.innerHTML = visible.map(p=>`<article class="product-card clay ${p.category==='Combos'?'combo-card':''}"><div class="product-top"><div><span class="product-tag">${p.tag}</span><h3>${p.name}</h3></div><span class="product-price">${money(p.price)}</span></div><p class="product-desc">${p.desc}</p><div class="product-actions"><button class="add-button" data-add="${p.id}">＋ Agregar</button>${p.category==='Hamburguesas'?`<button class="combo-button" data-combo="${p.id}">+ Combo $5.000</button>`:''}</div></article>`).join('');
  document.getElementById('emptyState').hidden = visible.length!==0;
 }
 function addToCart(id, combo=false){
